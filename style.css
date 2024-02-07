@@ -197,3 +197,20 @@ footer i {
     font-size: 200%;
     color:#333;
 }
+
+
+/* Media Queries */
+
+/* Pour les écrans jusqu'à 900px de large */
+@media (max-width: 900px) {
+    .features, .pricings .card-container .card {
+        flex-basis: calc(50% - 20px); /* Ajustez le 20px si votre gap est différent */
+    }
+  }
+  
+  /* Pour les écrans jusqu'à 600px de large */
+  @media (max-width: 600px) {
+    .features, .pricings .card-container .card {
+        flex-basis: 100%;
+    }
+  }
