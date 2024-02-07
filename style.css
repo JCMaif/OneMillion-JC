@@ -163,11 +163,18 @@ nav li a {
 .card h2 {
     font-family: "Arvo", serif;
     color: #f74c3c;
+    margin: 10px 0;
 
 }
 
 .card button {
     color: #f74c3c;
+    margin: 15px 0;
+    padding: 8px;
+    border-radius: 5%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-weight: bolder;
 }
 
 footer {
@@ -184,4 +191,9 @@ footer img {
 
 footer i {
     color: #333;
+}
+
+.fa-circle-chevron-up {
+    font-size: 200%;
+    color:#333;
 }
