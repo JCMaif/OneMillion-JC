@@ -9,17 +9,18 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 30px;
-    padding: 25px 230px;
+    height: 2em;
+    padding: 1.5em 14em;
 }
 
 nav img {
-    max-height: 20px;
+    max-height: 1.5em;
 }
 
 nav ul {
     display: flex;
-    font-size: 13px;
+    font-size: 0.8em;
+    
 }
 
 nav li {
@@ -31,7 +32,57 @@ nav li a {
     color: #929292;
     text-decoration: none;
     font-family: "Arvo", serif;
-    padding-left: 20px;
+    padding-left: 1.25em;
+}
+
+.menuButtonContainer {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuToggle {
+    display: none;
+}
+
+.menuButton,
+.menuButton::before,
+.menuButton::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menuButton::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menuButton::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menuToggle:checked+.menuButtonContainer .menuButton::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menuToggle:checked+.menuButtonContainer .menuButton {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menuToggle:checked+.menuButtonContainer .menuButton::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
 }
 
 .heroBanner {
@@ -49,14 +100,14 @@ nav li a {
     font-family: "Arvo", serif;
     margin-bottom: 20px;
     font-size: 370%;
-    width: 900px;
+    max-width: 900px;
     text-align: center;
     font-weight: lighter;
 }
 
 .heroBanner p {
     color: #fff;
-    width: 1000px;
+    max-width: 1000px;
     font-size: 132%;
     text-align: center;
     font-family: "Arvo", serif;
@@ -90,7 +141,7 @@ nav li a {
     padding-top: 30px;
     padding-bottom: 30px;
     font-family: helvetica, arial, sans-serif;
-    
+
 }
 
 .container strong {
@@ -98,16 +149,16 @@ nav li a {
 }
 
 .container h1 {
-    font-size: 30px;
+    font-size: 2em;
     font-family: "Arvo", serif;
     color: #f74c3c;
-    /* margin-bottom: 35px; */
 }
 
-.container hr, .container .title-wrapper hr {
+.container hr,
+.container .title-wrapper hr {
     border-top: 1px solid #f74c3c;
-	width: 160px;
-	margin-top: 15px;
+    width: 160px;
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 
@@ -125,7 +176,7 @@ nav li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 #whoWeAre img {
@@ -134,13 +185,13 @@ nav li a {
 }
 
 #whoWeAre p {
-    width: 1200px;
+    max-width: 1200px;
 }
 
 .fa {
     font-size: 300%;
     padding: 30px;
-    color:#fff;
+    color: #fff;
     background-color: #333;
     border-radius: 50%;
     margin: 10px;
@@ -195,22 +246,67 @@ footer i {
 
 .fa-circle-chevron-up {
     font-size: 200%;
-    color:#333;
+    color: #333;
 }
 
 
 /* Media Queries */
 
 /* Pour les écrans jusqu'à 900px de large */
-@media (max-width: 900px) {
-    .features, .pricings .card-container .card {
-        flex-basis: calc(50% - 20px); /* Ajustez le 20px si votre gap est différent */
+@media (max-width: 991px) {
+    .card-container {
+        flex-direction: column;
     }
-  }
-  
-  /* Pour les écrans jusqu'à 600px de large */
-  @media (max-width: 600px) {
-    .features, .pricings .card-container .card {
-        flex-basis: 100%;
+}
+
+/* Pour les écrans jusqu'à 600px de large */
+@media (max-width: 767px) {
+    .card-container {
+        flex-direction: column;
+        display: flex;
     }
-  }
+
+    .menuButtonContainer {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menuToggle~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menuToggle:checked~.menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+
+    .menu>li:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+}
