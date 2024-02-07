@@ -15,8 +15,6 @@ Enfin nous avons travaillé sur le CSS pour nous rapprocher au maximum de la mis
 ## Difficultés 
 - Tentative de récupération des fonts et icônes qui nous avaient été données mais nous n'avons pas réussi, nous sommes donc passés par font awesome.
 
-- L'image fournie pour servir de fond à notre hero banner ne permettait pas de coller au plus précis la maquette.
-
 - Faire fonctionner le menu burger en CSS
 
 - Passer de la version desktop à mobile avec les media queries
