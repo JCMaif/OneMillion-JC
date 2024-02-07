@@ -103,8 +103,9 @@ nav li a {
 
 .heroBanner {
     background-image: url("./assets/hero-image.jpg");
-    height: 650px;
-    background-size: cover;
+    height: 85vh;
+    background-repeat: no-repeat;
+    background-size: 170%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,8 +150,8 @@ nav li a {
 }
 
 .heroBanner img {
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
 }
 
 .container {
@@ -197,7 +198,7 @@ nav li a {
 }
 
 #whoWeAre img {
-    width: 10%;
+    width: 160px;
     padding: 20px;
 }
 
@@ -279,6 +280,9 @@ footer i {
 
 /* Pour les écrans jusqu'à 600px de large */
 @media (max-width: 767px) {
+    .heroBanner {
+        height: 650px;
+    }
     .card-container {
         flex-direction: column;
         display: flex;
