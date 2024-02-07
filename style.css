@@ -6,11 +6,20 @@
 
 nav {
     background-color: #222;
+    height: 50px;
+    padding: 0 10px;
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    height: 2em;
-    padding: 1.5em 14em;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
 }
 
 nav img {
@@ -34,7 +43,14 @@ nav li a {
     font-family: "Arvo", serif;
     padding-left: 1.25em;
 }
+.menu {
+    display: flex;
+    flex-direction: row;
+    position: relative;
 
+    right: 0;
+
+}
 .menuButtonContainer {
     display: none;
     height: 100%;
@@ -71,16 +87,16 @@ nav li a {
     margin-top: 8px;
 }
 
-#menuToggle:checked+.menuButtonContainer .menuButton::before {
+#menuToggle:checked+.nav-container .menuButtonContainer .menuButton::before {
     margin-top: 0px;
     transform: rotate(405deg);
 }
 
-#menuToggle:checked+.menuButtonContainer .menuButton {
+#menuToggle:checked+.nav-container .menuButtonContainer .menuButton {
     background: rgba(255, 255, 255, 0);
 }
 
-#menuToggle:checked+.menuButtonContainer .menuButton::after {
+#menuToggle:checked+.nav-container .menuButtonContainer .menuButton::after {
     margin-top: 0px;
     transform: rotate(-405deg);
 }
@@ -264,6 +280,10 @@ footer i {
     .card-container {
         flex-direction: column;
         display: flex;
+    }
+
+    .nav-container{
+        width: 100%;
     }
 
     .menuButtonContainer {
