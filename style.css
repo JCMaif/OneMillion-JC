@@ -145,6 +145,7 @@ nav li a {
     margin-bottom: 30px;
     margin-top: 20px;
     border-radius: 5%;
+    cursor: pointer;
 }
 
 .heroBanner img {
@@ -242,6 +243,7 @@ nav li a {
     border: 1px solid #ccc;
     background-color: #fff;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 footer {
